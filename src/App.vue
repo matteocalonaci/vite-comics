@@ -1,34 +1,27 @@
 <!-- JS -->
 <script>
-export default{
-  data() {
+import AppHeader from './components/AppHeader.vue';
+
+
+export default {
+    components: {
+        AppHeader,
+      
+    },
+
+    data() {
         return {
- 	titolo: "vite-comics"
+
         }
-    },
-
-    methods: {
-
-
-    },
-
-
-    //MOMENTI DI BASE
-    mounted() {
-        console.log("App montata")
-
     }
 }
 </script>
 
-
 <!-- HTML -->
 <template>
-  
+    <AppHeader />
 </template>
 
 
 <!-- CSS -->
-<style scoped>
-
-</style>
+<style></style>
