@@ -71,103 +71,104 @@ export default {
     }
 }
 </script>
-
 <template>
-    <!-- FASCIONE AZZURRO -->
-    <header>
-        <div class="row p-3">
-            <div class="col-2" v-for="card in cards">
-                <div class="row ">
-                    <div class="img col-4">
-                        <img :src="card.percorso" alt="">
-                    </div>
-                    <div id="text" class="col-8">{{ card.text }}</div>
-                </div>
-            </div>
-        </div>
 
-    </header>
-
-    <!-- LINK VARI -->
-    <main>
-        <div class="container">
-            <div class="row">
-
-                <!-- PARTE SX -->
-                <div class="col-6 p-2">
-                    <div class="row">
-                        <div class="col-4">
-                            <span class="fs-6 fw-bold">DC COMICS</span>
-
-                            <ul class="p-0 mt-2">
-                                <li v-for="link in comicsLinks" class="list-group-item text-white-50 lh-base">
-                                    <a href="#">{{ link }}</a>
-                                </li>
-                            </ul>
-
-                            <span class="fs-6 fw-bold">SHOP</span>
-
-                            <ul class="p-0 mt-2">
-                                <li v-for="link in shopLinks" class="list-group-item text-white-50 lh-base">
-                                    <a href="#">{{ link }}</a>
-                                </li>
-                            </ul>
+    <footer>
+        <!-- FASCIONE AZZURRO -->
+        <div class="frst-section">
+            <div class="row p-3">
+                <div class="col-2" v-for="card in cards">
+                    <div class="row ">
+                        <div class="img col-4">
+                            <img :src="card.percorso" alt="">
                         </div>
-                        <div class="col-4">
-                            <span class="fs-6 fw-bold">DC</span>
-
-                            <ul class="p-0 mt-2">
-                                <li v-for="link in dcLinks" class="list-group-item text-white-50">
-                                    <a href="#">{{ link }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-4 inizio">
-                            <span class="fs-6 fw-bold">SITES</span>
-
-                            <ul class="p-0 mt-2">
-                                <li v-for="link in sitesLinks" class="list-group-item text-white-50">
-                                    <a href="#">{{ link }}</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <div id="text" class="col-8">{{ card.text }}</div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- LINK VARI -->
+        <div class="scnd-section">
+            <div class="container">
+                <div class="row">
+
+                    <!-- PARTE SX -->
+                    <div class="col-6 p-2">
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="fs-6 fw-bold">DC COMICS</span>
+
+                                <ul class="p-0 mt-2">
+                                    <li v-for="link in comicsLinks" class="list-group-item text-white-50 lh-base">
+                                        <a href="#">{{ link }}</a>
+                                    </li>
+                                </ul>
+
+                                <span class="fs-6 fw-bold">SHOP</span>
+
+                                <ul class="p-0 mt-2">
+                                    <li v-for="link in shopLinks" class="list-group-item text-white-50 lh-base">
+                                        <a href="#">{{ link }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <span class="fs-6 fw-bold">DC</span>
+
+                                <ul class="p-0 mt-2">
+                                    <li v-for="link in dcLinks" class="list-group-item text-white-50">
+                                        <a href="#">{{ link }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-4 inizio">
+                                <span class="fs-6 fw-bold">SITES</span>
+
+                                <ul class="p-0 mt-2">
+                                    <li v-for="link in sitesLinks" class="list-group-item text-white-50">
+                                        <a href="#">{{ link }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
 
-                <!-- PARTE DX -->
-                <div id="main-footer-dx" class="col-6">
-                    <img class="img-footer" src="../assets/dc-logo-bg.png" alt="">
+                    <!-- PARTE DX -->
+                    <div id="main-footer-dx" class="col-6">
+                        <img class="img-footer" src="../assets/dc-logo-bg.png" alt="">
+                    </div>
+
+
                 </div>
+            </div>
+
+        </div>
 
 
+
+
+        <!-- BTN + FOLLOW-US -->
+        <div class="thrd-section py-3">
+
+            <div class="container row m-auto justify-content-between align-items-center">
+                <div class="col-2">
+                    <button type="button" class="btn">SIGN-UP NOW!</button>
+                </div>
+                <div class="col-8 txt-end">
+                    <span class="f-us"><b>FOLLOW US</b></span>
+                    <img id="icons" :src="img.src" alt="" v-for="img in images">
+                </div>
             </div>
         </div>
 
-    </main>
-
-
-
-
-    <!-- BTN + FOLLOW-US -->
-    <footer class="py-3">
-        <div class="container row m-auto justify-content-between align-items-center">
-            <div class="col-2">
-                <button type="button" class="btn">SIGN-UP NOW!</button>
-            </div>
-            <div class="col-8 txt-end">
-                <span class="f-us"><b>FOLLOW US</b></span>
-                <img id="icons" :src="img.src" alt="" v-for="img in images">
-            </div>
-        </div>
     </footer>
-
 </template>
-
 
 <!-- CSS -->
 <style scoped>
-header {
+.frst-section {
     position: sticky;
     display: flex;
     justify-content: center;
@@ -195,7 +196,7 @@ img {
     color: white;
 }
 
-main {
+.scnd-section {
     height: 20rem;
     background-image: url(../assets/footer-bg.jpg);
 }
@@ -212,7 +213,7 @@ main {
     right: 5rem;
 }
 
-footer {
+.thrd-section {
     position: sticky;
     height: 6rem;
     background-color: #484848;
