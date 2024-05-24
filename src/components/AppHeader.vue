@@ -1,6 +1,7 @@
 <!-- JS -->
 <script>
 export default {
+    name: "AppHeader",
     data() {
         return {
             links: [

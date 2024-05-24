@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: "AppFooter",
     data() {
         return {
             cards: [
@@ -210,7 +211,7 @@ img {
     width: 65%;
     position: absolute;
     bottom: -2rem;
-    right: 5rem;
+    right: 1rem;
 }
 
 .thrd-section {
