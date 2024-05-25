@@ -1,6 +1,10 @@
 <!-- JS -->
 <script>
+import ComicsList from "./ComicsList.vue";
 export default {
+  components: {
+    ComicsList
+  },
   name: "AppMain",
   data() {
     return {
@@ -93,12 +97,21 @@ export default {
       <div class="col-3">
         <h2 class="p-2 my-bg text-center text-white"><b>CURRENT SERIES</b></h2>
       </div>
+
+      <!--! PERCHE' PADDING E MARGIN NON FANNO? -->
+      <div class="row">
+        Non riuscivo a dare spazio tra "CURRENT SERIES" e le "CARD"
+      </div>
+
+
       <div class="card-container">
         <div class="row p-4">
-          <div class="col-2" v-for="card in fumetti">-
+
+          <ComicsList v-for="card in fumetti" :fumetti="card" />
+          <!-- <div class="card col-2" v-for="card in fumetti">
             <img :src="card.thumb" alt="">
             <p class="text-white">{{ card.series }}</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <button class=" d-flex m-auto">LOAD MORE</button>
@@ -123,7 +136,6 @@ main {
 
 .col-12 {
   height: 20rem;
-  background-color: beige;
   position: relative;
 }
 
@@ -140,14 +152,6 @@ img {
   object-position: top;
 }
 
-.col-2 img {
-  height: 12rem;
-  width: 12rem;
-}
-
-.row {
-  padding-top: 2rem;
-}
 
 button {
   background-color: rgb(2, 130, 249);
