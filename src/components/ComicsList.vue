@@ -11,29 +11,41 @@ export default {
 </script>
 
 <template>
-    <div class="card col-2">
+    <div class="card">
         <img :src="fumetti.thumb" alt="">
         <p class="text-white">{{ fumetti.series }}</p>
-
     </div>
 </template>
 
 <!-- CSS -->
 <style scoped>
-.col-2 {
+.card {
     background: #222;
     border: none;
-}
-
-/* BORDO MESSO A CASO IN AUTOMATICO?? */
-
-.col-2 img {
-    height: 12rem;
-    width: 12rem;
+    margin: 1rem; /* Add margin around cards */
+    display: flex; /* Use flexbox for card content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content inside the card */
+    width: 100%; /* Allow cards to take full width */
 
 }
 
-.row {
-    padding-top: 2rem;
+.card img {
+    height: 100%;
+    width: 100%; /* Make image responsive */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.card p {
+    color: white; /* Ensure text is white */
+    text-align: center; /* Center text */
+    padding: 0.5rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Allow cards to take more width on mobile */
+    }
 }
 </style>

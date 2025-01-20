@@ -90,59 +90,42 @@ export default {
 <!-- HTML -->
 <template>
   <main>
-    <div class="col-12">
+    <div class="jumbotron">
       <img src="../assets/jumbotron.jpg" alt="">
     </div>
     <div class="container">
-      <div class="col-3">
-        <h2 class="p-2 my-bg text-center text-white"><b>CURRENT SERIES</b></h2>
+      <div class="col-12 text-center">
+        <h2 class="p-2 my-bg text-white"><b>CURRENT SERIES</b></h2>
       </div>
 
-      <!--! PERCHE' PADDING E MARGIN NON FANNO? -->
       <div class="row">
-        Non riuscivo a dare spazio tra "CURRENT SERIES" e le "CARD"
-      </div>
-
-
-      <div class="card-container">
-        <div class="row p-4">
-
-          <ComicsList v-for="card in fumetti" :fumetti="card" />
-          <!-- <div class="card col-2" v-for="card in fumetti">
-            <img :src="card.thumb" alt="">
-            <p class="text-white">{{ card.series }}</p>
-          </div> -->
+        <div class="col-12">
+          <div class="row p-4 d-flex justify-content-center"> <!-- Added Bootstrap classes here -->
+            <ComicsList v-for="card in fumetti" :key="card.series" :fumetti="card" />
+          </div>
         </div>
       </div>
-      <button class=" d-flex m-auto">LOAD MORE</button>
-
+      <div class="p-5">
+      <button class="d-flex m-auto">LOAD MORE</button>
+      </div>
     </div>
-
   </main>
-
 </template>
 
 
 <!-- CSS -->
 <style scoped>
 main {
-  height: 60rem;
-  background: #222;
+height: auto;  background: #222;
 }
 
-.img {
-  height: 5rem;
-}
-
-.col-12 {
+.jumbotron {
   height: 20rem;
   position: relative;
 }
 
 h2 {
-  position: absolute;
-  top: 24rem;
-  border: 0.1rem solid black;
+  margin: 1rem 0; 
 }
 
 img {
@@ -152,16 +135,48 @@ img {
   object-position: top;
 }
 
-
 button {
   background-color: rgb(2, 130, 249);
   border: 0.1rem solid rgb(2, 130, 249);
   color: white;
   padding: 0.5rem 2rem;
+  text-align: center;
 }
 
 .my-bg {
   background-color: rgb(2, 130, 249);
+}
+
+.card {
+  margin: 1rem; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width:  calc((100% - 2rem) /5);
+}
+
+.card img {
+  height: 17rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .col-12 {
+    height: auto; 
+  }
+
+  h2 {
+    margin-top: 2rem; 
+  }
+
+  .card {
+  margin: 1rem;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width:  calc((100% - 2rem)/1);
+}
 
 }
 </style>
